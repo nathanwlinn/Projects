@@ -1,0 +1,13 @@
+>init
+<<<
++ f.txt wug.txt
++ g.txt notwug.txt
+> add g.txt
+<<<
+> add f.txt
+<<<
+> commit "two files"
+<<<
+> add f.txt
+<<<
+I blank-status.inc

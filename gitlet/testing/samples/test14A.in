@@ -1,0 +1,12 @@
+>init
+<<<
+>branch other
+<<<
+>checkout other
+<<<
+>rm-branch other
+Cannot remove the current branch.
+<<<
+>rm-branch huh
+A branch with that name does not exist.
+<<<

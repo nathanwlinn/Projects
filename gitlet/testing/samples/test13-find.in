@@ -1,0 +1,56 @@
+>init
+<<<
++ f.txt wug.txt
++ g.txt notwug.txt
+> add g.txt
+<<<
+> add f.txt
+<<<
+> commit "Two files"
+<<<
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+D COMMIT_HEAD "commit ([a-f0-9]+)[ \t]*\n(?:Merge:\s+[0-9a-f]{7}\s+[0-9a-f]{7}[ ]*\n)?${DATE}"
+> rm f.txt
+<<<
+> commit "Remove one file"
+<<<
++ f.txt notwug.txt
+> add f.txt
+<<<
+> commit "Two files"
+<<<
+> log
+===
+${COMMIT_HEAD}
+Two files
+
+===
+${COMMIT_HEAD}
+Remove one file
+
+===
+${COMMIT_HEAD}
+Two files
+
+===
+${COMMIT_HEAD}
+initial commit
+
+<<<*
+# UID of initial version
+D UID1 "${4}"
+# UID of second version
+D UID2 "${3}"
+# UID of third version
+D UID3 "${2}"
+# UID of current version
+D UID4 "${1}"
+> find "Two files"
+(${UID4}\n${UID2}|${UID2}\n${UID4})
+<<<*
+> find "initial commit"
+${UID1}
+<<<
+> find "Remove one file"
+${UID3}
+<<<

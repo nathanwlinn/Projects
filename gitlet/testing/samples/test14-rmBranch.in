@@ -1,0 +1,28 @@
+> init
+<<<
+> branch other
+<<<
++ f.txt wug.txt
+> add f.txt
+<<<
+> commit "File f.txt"
+<<<
+> checkout other
+<<<
+> rm-branch other
+Cannot remove the current branch.
+<<<
++ g.txt notwug.txt
+> add g.txt
+<<<
+> commit "File g.txt"
+<<<
+> checkout master
+<<<
+> rm-branch other
+<<<
+> checkout other
+No such branch exists.
+<<<
+* g.txt
+= f.txt wug.txt
